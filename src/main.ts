@@ -36,6 +36,7 @@ function initCanvas(): void {
   const animDeltaPerMS = (Math.PI * 2) / durationCycleMS;
   const segmentDeltaPerMS = cycleLength / durationCycleMS;
 
+  let nextCycle = 0;
   let isFirstFrame = true;
   let animTheta = 0;
   let segmentCount = 0;
@@ -54,8 +55,17 @@ function initCanvas(): void {
 
     const timePoint = segmentCount % cycleLength;
     if (timePoint <= lastTimePoint) {
-      console.log('CICLE START');
+      if (nextCycle === 1 || nextCycle === 2) {
+        console.log('Stop Recording');
+        if (nextCycle === 1) {
+          console.log('Re-startreccording');
+        }
+      }
+
+      console.log('CICLE START', { nextCycle });
       console.log('Duration from last', timestamp - startTimestamp);
+
+      nextCycle++;
       startTimestamp = timestamp;
     }
     lastTimePoint = timePoint;
