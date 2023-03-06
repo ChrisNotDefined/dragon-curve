@@ -1,0 +1,28 @@
+:root {
+  background-color: #151515;
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+#canvas {
+  --size: 100vh;
+  width: var(--size);
+  display: block;
+  padding: 0;
+  margin: auto;
+  border-radius: 0.3em;
+  height: var(--size);
+}
